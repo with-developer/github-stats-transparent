@@ -63,15 +63,14 @@ async def generate_languages(s: Stats) -> None:
     delay_between = 150
     for i, (lang, data) in enumerate(sorted_languages):
         color = data.get("color")
-        color = color if color is not None else "#000000"
+        color = color if color is not None else "#1a1b27"
         ratio = [.98, .02]
         if data.get("prop", 0) > 50:
             ratio = [.99, .01]
         if i == len(sorted_languages) - 1:
             ratio = [1, 0]
         progress += (f'<span style="background-color: {color};'
-                     f'width: {(ratio[0] * data.get("prop", 0)):0.3f}%;'
-                     f'margin-right: {(ratio[1] * data.get("prop", 0)):0.3f}%;" '
+                     f'width: {(ratio[0] * data.get("prop", 0)):0.3f}%;" '
                      f'class="progress-item"></span>')
         lang_list += f"""
 <li style="animation-delay: {i * delay_between}ms;">
@@ -81,7 +80,6 @@ fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"></path></svg>
 <span class="lang">{lang}</span>
 <span class="percent">{data.get("prop", 0):0.2f}%</span>
 </li>
-
 """
 
     output = re.sub(r"{{ progress }}", progress, output)
