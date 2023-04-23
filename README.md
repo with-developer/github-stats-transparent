@@ -72,6 +72,8 @@ anyone may be able to see the name of one or more private repositories.
 
 11. Star this repo if you like it!
 
+다 따라하고, Actions에서 "Run Workflow" 했을때 permission 에러 나오면, Settings 페이지에서 Workflow 권한을 수정해줘야합니다.<br>
+Settings -> Actions -> General -> Read and write permissions Check
 
 <br>
 <br>
